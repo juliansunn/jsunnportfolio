@@ -39,27 +39,27 @@ export default function Home({
       </Head>
       <Header socials={socials} />
 
-      <section className="snap-start" id="hero">
+      <section className="" id="hero">
         <Hero pageInfo={pageInfo} />
       </section>
 
-      <section className="snap-center" id="about">
+      <section className="" id="about">
         <About pageInfo={pageInfo} />
       </section>
 
-      <section className="snap-center" id="experience">
+      <section className="" id="experience">
         <WorkExperience experiences={experiences} />
       </section>
 
-      <section id="skills" className="snap-start">
+      <section id="skills" className="">
         <Skills skills={skills} />
       </section>
 
-      <section id="projects" className="snap-start">
+      <section id="projects" className="">
         <Projects projects={projects} />
       </section>
 
-      <section id="contact" className="snap-start">
+      <section id="contact" className="">
         <ContactMe />
       </section>
       <Link href="#hero">
