@@ -42,7 +42,7 @@ const Hero = ({ pageInfo }: Props) => {
           <span>{text}</span>
           <Cursor cursorColor="#00bcd4" />
         </h1>
-        <div className="space-x-2">
+        <div className="flex flex-col space-x-2 space-y-2 sm:flex-row sm:space-y-0 items-center justify-center">
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>
