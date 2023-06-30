@@ -11,8 +11,8 @@ type Props = {
 const ExperienceCard = ({ experience }: Props) => {
   return (
     <article
-      className="flex flex-col rounded-lg items-stretch space-y-7 flex-shrink-0 
-    w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-zinc-700 p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden"
+      className="flex flex-col rounded-lg space-y-7 flex-shrink-0 
+    items-stretch bg-zinc-700 p-5 md:p-10 "
     >
       <motion.img
         initial={{ y: -100, opacity: 0 }}
@@ -21,9 +21,9 @@ const ExperienceCard = ({ experience }: Props) => {
         viewport={{ once: true }}
         src={urlFor(experience?.companyImage).url()}
         alt="company-image"
-        className="w-32 h-32 object-cover object-center rounded-full xl:w-[200px] xl:h-[200px] "
+        className="w-32  object-cover object-center  xl:w-[200px] "
       />
-      <div className="px-0 md:px-10 ">
+      <div className="">
         <h4 className="text-4xl font-light">{experience?.jobTitle}</h4>
         <p className="text-gray-500 uppercase font-bold text-xl mt-1">
           {experience?.company}
@@ -52,7 +52,7 @@ const ExperienceCard = ({ experience }: Props) => {
               : new Date(experience.dateEnded).toDateString()}
           </span>
         </p>
-        <ul className="list-disc  space-y-4 ml-5 text-lg h-80 overflow-y-scroll scrollbar-thin scrollbar-thumb-cyan-500/20">
+        <ul className=" list-outside list-disc space-y-4 text-lg px-5 text-left">
           {experience.points?.map((point, i) => (
             <li key={i}>{point}</li>
           ))}

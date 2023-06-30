@@ -1,4 +1,4 @@
-export default {
+const pageInfo = {
   name: "pageInfo",
   title: "PageInfo",
   type: "document",
@@ -24,7 +24,7 @@ export default {
     {
       name: "backgroundInformation",
       title: "backgroundInformation",
-      type: "string",
+      type: "text",
     },
     {
       name: "profilePicture",
@@ -57,3 +57,5 @@ export default {
     },
   ],
 };
+
+export default pageInfo;
