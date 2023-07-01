@@ -13,16 +13,17 @@ import { GetStaticProps } from "next";
 import { fetchPageInfo } from "../../utils/fetchPageInfo";
 import { fetchExperiences } from "../../utils/fetchExperiences";
 import { fetchProject } from "../../utils/fetchProjects";
-// import { fetchParadigms } from "../../utils/fetchParadigms";
+import { fetchParadigms } from "../../utils/fetchParadigms";
 import { fetchSocials } from "../../utils/fetchSocials";
 import { urlFor } from "../../sanity";
+import Skills from "@/components/Skills";
 
 type Props = {
   pageInfo: PageInfo;
   experiences: Experience[];
   projects: Project[];
   socials: Social[];
-  // paradigms: Paradigm[];
+  paradigms: Paradigm[];
 };
 
 export default function Home({
@@ -30,8 +31,8 @@ export default function Home({
   experiences,
   projects,
   socials,
-}: // paradigms,
-Props) {
+  paradigms,
+}: Props) {
   return (
     <div className="bg-zinc-800 h-screen text-white  snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-200/20 scrollbar-thumb-cyan-500/20">
       <Head>
@@ -51,9 +52,9 @@ Props) {
         <WorkExperience experiences={experiences} />
       </section>
 
-      {/* <section id="skills" className="">
+      <section id="skills" className="">
         <Skills paradigms={paradigms} />
-      </section> */}
+      </section>
 
       <section id="projects" className="">
         <Projects projects={projects} />
@@ -84,7 +85,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const experiences: Experience[] = await fetchExperiences();
   const projects: Project[] = await fetchProject();
   const socials: Social[] = await fetchSocials();
-  // const paradigms: Paradigm[] = await fetchParadigms();
+  const paradigms: Paradigm[] = await fetchParadigms();
 
   return {
     props: {
@@ -92,7 +93,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       experiences,
       projects,
       socials,
-      // paradigms,
+      paradigms,
     },
     revalidate: 60,
   };
