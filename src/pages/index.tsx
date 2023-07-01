@@ -35,7 +35,7 @@ export default function Home({
   return (
     <div className="bg-zinc-800 h-screen text-white  snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-200/20 scrollbar-thumb-cyan-500/20">
       <Head>
-        <title>Julian Sunns Portfolio</title>
+        <title>Julian Sunn Portfolio</title>
       </Head>
       <Header socials={socials} />
 
