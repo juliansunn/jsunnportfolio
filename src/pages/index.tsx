@@ -8,18 +8,10 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
 import Link from "next/link";
-import {
-  Experience,
-  PageInfo,
-  Paradigm,
-  Project,
-  Skill,
-  Social,
-} from "../../typings";
+import { Experience, PageInfo, Paradigm, Project, Social } from "../../typings";
 import { GetStaticProps } from "next";
 import { fetchPageInfo } from "../../utils/fetchPageInfo";
 import { fetchExperiences } from "../../utils/fetchExperiences";
-import { fetchSkills } from "../../utils/fetchSkills";
 import { fetchProject } from "../../utils/fetchProjects";
 import { fetchParadigms } from "../../utils/fetchParadigms";
 import { fetchSocials } from "../../utils/fetchSocials";
@@ -28,7 +20,6 @@ import { urlFor } from "../../sanity";
 type Props = {
   pageInfo: PageInfo;
   experiences: Experience[];
-  // skills: Skill[];
   projects: Project[];
   socials: Social[];
   paradigms: Paradigm[];
@@ -37,12 +28,10 @@ type Props = {
 export default function Home({
   pageInfo,
   experiences,
-  // skills,
   projects,
   socials,
   paradigms,
 }: Props) {
-  console.log("paradigms", paradigms);
   return (
     <div className="bg-zinc-800 h-screen text-white  snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-200/20 scrollbar-thumb-cyan-500/20">
       <Head>
@@ -93,7 +82,6 @@ export default function Home({
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
-  // const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProject();
   const socials: Social[] = await fetchSocials();
   const paradigms: Paradigm[] = await fetchParadigms();
@@ -102,7 +90,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     props: {
       pageInfo,
       experiences,
-      // skills,
       projects,
       socials,
       paradigms,
