@@ -13,7 +13,7 @@ const About = ({ pageInfo }: Props) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex flex-col text-center md:text-left px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center"
+      className="flex flex-col text-center md:text-left px-5 md:px-10 xl:px-32 min-h-screen justify-center xl:space-y-0 mx-auto items-center my-10"
     >
       <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl pb-20">
         About
@@ -32,14 +32,14 @@ const About = ({ pageInfo }: Props) => {
           viewport={{ once: true }}
           src={urlFor(pageInfo?.heroImage).url()}
           alt="About Me Picture"
-          className="rounded-lg m-10   w-48 h-96 xl:w-[300px] xl:h-[600px]"
+          className="rounded-lg m-10 w-48 h-96 xl:w-[300px] xl:h-[600px]"
         />
         <div className="space-y-10 px-10 flex-auto md:w-1/2">
           <h4 className="text-4xl font-semibold">
             A little{" "}
             <span className="underline decoration-cyan-500/40">background</span>{" "}
           </h4>
-          <p className="flex text-start h-80 overflow-y-scroll scrollbar-thin scrollbar-thumb-cyan-500/20">
+          <p className="flex text-start h-96 xl:h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-500/20">
             {pageInfo?.backgroundInformation}
           </p>
         </div>

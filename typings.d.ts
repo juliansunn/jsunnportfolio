@@ -51,6 +51,12 @@ export interface Skill extends SanityBody {
   title: string;
 }
 
+export interface Paradigm extends SanityBody {
+  _type: "paradigm";
+  title: string;
+  skills: Skill[];
+}
+
 export interface Project extends SanityBody {
   _type: "project";
   image: Image;
