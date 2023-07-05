@@ -1,6 +1,7 @@
 import React from "react";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { PageInfo } from "../../typings";
 
 type Inputs = {
   name: string;
@@ -8,14 +9,15 @@ type Inputs = {
   subject: string;
   message: string;
 };
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-const ContactMe = (props: Props) => {
-  const devEmail = "juliansunn@gmail.com";
+const ContactMe = ({ pageInfo }: Props) => {
   const { register, handleSubmit } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href = `mailto:${devEmail}?subject=${formData.subject}&from=${formData.email}&body=Hi, My name is ${formData.name}, ${formData.message} | ${formData.email}`;
+    window.location.href = `mailto:${pageInfo.email}?subject=${formData.subject}&from=${formData.email}&body=Hi, My name is ${formData.name}, ${formData.message} | ${formData.email}`;
   };
   return (
     <div className="h-screen relative flex flex-col text-center md:text-left md:flex-row max-w-7xl justify-evenly mx-auto items-center">
@@ -31,22 +33,22 @@ const ContactMe = (props: Props) => {
         <div className="space-y-10">
           <div className="flex items-center space-x-5 justify-center ">
             <PhoneIcon className="text-cyan-500 h-7 w-7 animate-pulse" />
-            <p>+ 1 (530) 514-2519</p>
+            <p>{pageInfo.phoneNumber}</p>
           </div>
           <div className="flex items-center space-x-5 justify-center ">
             <EnvelopeIcon className="text-cyan-500 h-7 w-7 animate-pulse" />
-            <p>{devEmail}</p>
+            <p>{pageInfo.email}</p>
           </div>
           <div className="flex items-center space-x-5 justify-center ">
             <MapPinIcon className="text-cyan-500 h-7 w-7 animate-pulse" />
-            <p>Santa Cruz, California</p>
+            <p>{pageInfo.address}</p>
           </div>
         </div>
         <form
           className="flex flex-col space-y-2 w-fit mx-auto"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="space-x-2">
+          <div className="sm:space-y-2">
             <input
               {...register("name")}
               placeholder="Name"

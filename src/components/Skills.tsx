@@ -8,7 +8,6 @@ type Props = {
 };
 
 const Skills = ({ paradigms }: Props) => {
-  console.log("paradigms", paradigms);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -30,17 +29,10 @@ const Skills = ({ paradigms }: Props) => {
           <h3 className="uppercase tracking-[20px] text-gray-500">
             {paradigm.title}
           </h3>
-          <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-5 p-5">
-            {paradigm.skills
-              ?.slice(0, paradigm.skills.length / 2)
-              .map((skill) => (
-                <Skill key={skill._id} skill={skill} />
-              ))}
-            {paradigm.skills
-              ?.slice(paradigm.skills.length / 2, paradigm.skills.length)
-              .map((skill) => (
-                <Skill key={skill._id} skill={skill} directionLeft />
-              ))}
+          <div className="grid grid-cols-5 lg:grid-cols-6 gap-3 p-5 ">
+            {paradigm.skills?.map((skill) => (
+              <Skill key={skill._id} skill={skill} />
+            ))}
           </div>
         </div>
       ))}
