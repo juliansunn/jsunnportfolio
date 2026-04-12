@@ -34,7 +34,9 @@ export default function Home({
   paradigms,
 }: Props) {
   return (
-    <div className="bg-zinc-800 h-screen text-white  snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-200/20 scrollbar-thumb-cyan-500/20">
+    <div className="scanlines bg-retro-black h-screen text-white snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-transparent scrollbar-thumb-neon-green/20"
+      style={{ backgroundImage: "linear-gradient(rgba(0,255,159,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,159,0.03) 1px, transparent 1px)", backgroundSize: "40px 40px" }}
+    >
       <Head>
         <title>Julian Sunn Portfolio</title>
       </Head>
@@ -65,7 +67,7 @@ export default function Home({
       </section>
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
-          <div className="flex itemx-center justify-center">
+          <div className="flex items-center justify-center">
             <Image
               src={urlFor(pageInfo?.profilePicture).url()}
               alt="Profile Photo"
