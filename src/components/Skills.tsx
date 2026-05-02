@@ -47,7 +47,7 @@ const Skills = ({ paradigms }: Props) => {
             />
           </div>
 
-          <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-7 gap-4">
+          <div className="flex flex-wrap justify-center gap-2 max-w-3xl">
             {paradigm.skills?.map((skill, sIndex) => (
               <Skill key={skill._id} skill={skill} directionLeft={sIndex % 2 === 0} />
             ))}

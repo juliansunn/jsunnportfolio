@@ -1,24 +1,24 @@
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
-import Image from "next/image";
 import Link from "next/link";
 import { PageInfo } from "../../typings";
-import { urlFor } from "../../sanity";
 
 type Props = {
   pageInfo: PageInfo;
 };
 
 const Hero = ({ pageInfo }: Props) => {
-  const [text, count] = useTypewriter({
+  const [text] = useTypewriter({
     words: [
-      `Hi, I am ${pageInfo?.name}`,
-      "Web Developer",
-      "Engineer",
-      "Scientist",
+      `Hi, I'm ${pageInfo?.name}`,
+      "Girl Dad of Two",
       "Runner",
-      "Girl Dad",
+      "Backend Engineer",
+      "Husband",
+      "Recovering Triathlete",
+      "Perpetually Curious Mind",
+      "AI Enthusiast",
     ],
     loop: true,
     delaySpeed: 2000,
@@ -38,12 +38,11 @@ const Hero = ({ pageInfo }: Props) => {
           }}
         >
           <div className="rounded-full p-[2px] bg-retro-black">
-            <Image
-              src={urlFor(pageInfo?.profilePicture).url()}
-              alt="Profile Photo"
-              className="relative rounded-full h-36 w-36 mx-auto object-cover"
-              width={500}
-              height={500}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/profile-photo.png"
+              alt="Julian Sunn"
+              className="rounded-full h-36 w-36 mx-auto object-cover"
             />
           </div>
         </div>
