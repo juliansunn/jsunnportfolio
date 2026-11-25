@@ -18,6 +18,8 @@ export type Project = {
   viz: Viz;
   vizCaption: string;
   vizNote: string;
+  /** A real screenshot. When present it replaces the illustrative chart. */
+  shot?: { src: string; alt: string; caption: string; width: number; height: number };
 };
 
 export const profile = {
@@ -108,6 +110,40 @@ export const projects: Project[] = [
     viz: "glucose",
     vizCaption: "Glucose (solid) and insulin across two meals",
     vizNote: "one day",
+    shot: {
+      src: "/shots/metabolism-1.png",
+      alt: "Metabolism Simulator: diet and timing controls on the left, an animated body map with the liver selected, and daily metabolic readouts",
+      caption: "Keto scenario, day 1, liver selected",
+      width: 1600,
+      height: 1000,
+    },
+  },
+  {
+    slug: "tideline",
+    name: "Tideline",
+    kind: "Watch the tide move across a real coastline in 3D",
+    status: { label: "Live", tone: "live" },
+    accent: "#0A4C86",
+    vizAccent: "#4F9FE6",
+    summary:
+      "NOAA tide predictions and live wave-buoy readings on seamless land and seafloor elevation. Scrub through the next four days and see where the water is, where waves wash up, and which reefs and tidepools are exposed. Santa Cruz is the first region.",
+    detail:
+      "Water spreads outward from the open sea cell by cell, so a pond behind a berm stays dry until it's overtopped. Wave runup uses the Stockdon (2006) formula from buoy height, period and beach slope. The renderer is hand-written WebGL2 with no libraries, and the hosted version is static files plus two Python functions.",
+    stats: [
+      { label: "Stack", value: "Python (numpy), WebGL2, Vercel functions" },
+      { label: "Data", value: "NOAA tides, NDBC buoys, NCEI elevation, USGS imagery" },
+    ],
+    links: [{ label: "Open Tideline", href: "https://tideline-liard.vercel.app" }],
+    viz: "glucose",
+    vizCaption: "",
+    vizNote: "",
+    shot: {
+      src: "/shots/tideline-1.png",
+      alt: "Tideline: 3D Santa Cruz coastline with the sea at the current tide, a layers panel and a four-day tide chart",
+      caption: "Santa Cruz, rising tide, live buoy reading",
+      width: 1600,
+      height: 1000,
+    },
   },
   {
     slug: "antefy",
@@ -133,12 +169,6 @@ export const projects: Project[] = [
 ];
 
 export const alsoBuilt = [
-  {
-    name: "Tideline",
-    what: "Watch the tide move across a real coastline in 3D, with NOAA predictions and live wave buoys on seamless land and seafloor elevation.",
-    stack: "Python, WebGL2",
-    link: { label: "Live", href: "https://tideline-liard.vercel.app" },
-  },
   {
     name: "Claude Usage",
     what: "Local dashboard that turns Claude Code session transcripts into API-equivalent cost per session and per turn, cache tokens included.",

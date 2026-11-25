@@ -4,6 +4,7 @@ import { about, alsoBuilt, experience, profile, projects, skills, type Project }
 import { CareerTimeline } from "./CareerTimeline";
 import { CopyCommand } from "./CopyCommand";
 import { ProjectChart } from "./ProjectChart";
+import { ProjectShot } from "./ProjectShot";
 
 export function Header() {
   return (
@@ -60,7 +61,11 @@ function FeaturedProject({ p }: { p: Project }) {
         <h3 id={`${p.slug}-h`}>{p.name}</h3>
         <p className="kind">{p.kind}</p>
         <span className={`status ${p.status.tone}`}>{p.status.label}</span>
-        <ProjectChart viz={p.viz} caption={p.vizCaption} note={p.vizNote} accent={p.vizAccent} />
+        {p.shot ? (
+          <ProjectShot {...p.shot} />
+        ) : (
+          <ProjectChart viz={p.viz} caption={p.vizCaption} note={p.vizNote} accent={p.vizAccent} />
+        )}
       </div>
       <div>
         <p>{p.summary}</p>
