@@ -57,18 +57,11 @@ export function Hero() {
 function FeaturedProject({ p }: { p: Project }) {
   return (
     <article className="project" style={{ "--accent": p.accent } as CSSProperties} aria-labelledby={`${p.slug}-h`}>
-      <div>
+      <div className="project-text">
         <h3 id={`${p.slug}-h`}>{p.name}</h3>
         <p className="kind">{p.kind}</p>
         <span className={`status ${p.status.tone}`}>{p.status.label}</span>
-        {p.shot ? (
-          <ProjectShot {...p.shot} />
-        ) : (
-          <ProjectChart viz={p.viz} caption={p.vizCaption} note={p.vizNote} accent={p.vizAccent} />
-        )}
-      </div>
-      <div>
-        <p>{p.summary}</p>
+        <p className="summary">{p.summary}</p>
         <p className="detail">{p.detail}</p>
         {p.install && <CopyCommand command={p.install} />}
         <div className="links">
@@ -76,6 +69,13 @@ function FeaturedProject({ p }: { p: Project }) {
             <a key={l.href} href={l.href}>{l.label}</a>
           ))}
         </div>
+      </div>
+      <div className="project-media">
+        {p.shot ? (
+          <ProjectShot {...p.shot} />
+        ) : (
+          <ProjectChart viz={p.viz} caption={p.vizCaption} note={p.vizNote} accent={p.vizAccent} />
+        )}
       </div>
     </article>
   );

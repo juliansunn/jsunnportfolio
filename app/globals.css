@@ -95,10 +95,13 @@ h2 { font-size: clamp(40px, 6vw, 72px); }
 .head p { margin: 0; max-width: 46ch; color: var(--slate); }
 
 /* featured projects */
-.project { --accent: var(--pacific); display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; padding: 40px 0; border-bottom: 1px solid var(--rule); }
+.project { --accent: var(--pacific); display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; align-items: center; padding: 56px 0; border-bottom: 1px solid var(--rule); }
+.project .summary { margin-top: 24px; }
+.project-media .shot, .project-media .viz { margin: 0; }
+.project-media .viz { max-width: none; }
 .project:first-of-type { padding-top: 0; }
 .project > div { min-width: 0; }
-.project h3 { position: relative; padding-top: 18px; font-size: clamp(52px, 7.5vw, 96px); line-height: 0.88; }
+.project h3 { position: relative; padding-top: 18px; font-size: clamp(48px, 6vw, 80px); line-height: 0.9; }
 .project h3::before { content: ""; position: absolute; left: 0; top: 0; width: 56px; height: 6px; background: var(--accent); }
 .project .kind { font-weight: 600; margin: 12px 0 0; font-size: 16px; }
 .status { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; margin-top: 18px; }
