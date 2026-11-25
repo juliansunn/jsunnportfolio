@@ -71,14 +71,6 @@ function FeaturedProject({ p }: { p: Project }) {
         <p>{p.summary}</p>
         <p className="detail">{p.detail}</p>
         {p.install && <CopyCommand command={p.install} />}
-        <dl className="stats">
-          {p.stats.map((s) => (
-            <div key={s.label}>
-              <dt>{s.label}</dt>
-              <dd className={s.big ? "big" : undefined}>{s.value}</dd>
-            </div>
-          ))}
-        </dl>
         <div className="links">
           {p.links.map((l) => (
             <a key={l.href} href={l.href}>{l.label}</a>

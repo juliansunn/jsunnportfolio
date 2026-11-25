@@ -13,7 +13,6 @@ export type Project = {
   summary: string;
   detail: string;
   install?: string;
-  stats: { label: string; value: string; big?: boolean }[];
   links: { label: string; href: string }[];
   viz: Viz;
   vizCaption: string;
@@ -57,12 +56,7 @@ export const projects: Project[] = [
     summary:
       "Rung started as senior and staff interview prep and now teaches any subject. It tracks a rating for every concept over a prerequisite graph, plans practice where you succeed 70 to 85% of the time, and schedules reviews with FSRS.",
     detail:
-      "It grades multiple choice, short answers, code, whiteboard drawings, spoken answers and math (with SymPy). Explore is a tutor that teaches at the edge of what you know and checks you as it goes. The Discipline Studio builds a new subject from a chat, with a concept map, levels and questions grounded in OpenStax textbooks, your own notes or the web, and a citation on every lesson.",
-    stats: [
-      { label: "Code", value: "38K", big: true },
-      { label: "Stack", value: "Expo, FastAPI, Postgres + pgvector, Gemini on Vertex AI" },
-      { label: "Status", value: "Running on Cloud Run. Accounts are built and launching." },
-    ],
+      "It grades code, whiteboard drawings, spoken answers and math, and a tutor teaches at the edge of what you know.",
     links: [{ label: "Ask me for a demo", href: "mailto:juliansunn@gmail.com?subject=Rung%20demo" }],
     viz: "rating",
     vizCaption: "Rating per domain, climbing toward the target level",
@@ -77,12 +71,8 @@ export const projects: Project[] = [
     summary:
       "I wanted one app that rides my structured trainer workouts, plans the week with an AI coach, and guides my outdoor runs. Torch controls a Wahoo KICKR in ERG mode over Bluetooth, replays runs on 3D route maps, and syncs with Strava and with Garmin through intervals.icu.",
     detail:
-      "The desktop app is Tauri 2 and Rust, talking to the trainer natively over Bluetooth with FTMS. The same app builds for iPhone, with GPS-guided runs, voice cues and a Dynamic Island step.",
+      "Tauri 2 and Rust talk to the trainer natively over Bluetooth, and the same app runs on iPhone for GPS-guided runs.",
     install: "curl -fsSL https://torch-training.vercel.app/install.sh | sh",
-    stats: [
-      { label: "Stack", value: "Tauri 2 (Rust), React 19, Next.js 16 + Neon API, Gemini coach" },
-      { label: "Platforms", value: "macOS (Apple Silicon), iPhone" },
-    ],
     links: [
       { label: "Download Torch", href: "https://torch-training.vercel.app" },
       { label: "Releases on GitHub", href: "https://github.com/juliansunn/torch-releases" },
@@ -100,12 +90,7 @@ export const projects: Project[] = [
     summary:
       "An interactive model that runs from minutes to years. An animated body map shows the liver, pancreas, muscle and fat responding, alongside glucose, insulin and ketone curves, then long-term HbA1c and body composition with responder ranges.",
     detail:
-      "Every variable is labeled with how you'd actually measure it. The simulation engine is framework-free TypeScript running in a Web Worker, so the UI stays smooth while it computes.",
-    stats: [
-      { label: "Commits", value: "289", big: true },
-      { label: "Stack", value: "Next.js 16, Recharts, Neon, Clerk, AI SDK" },
-      { label: "Why me", value: "Biology degree plus my day job at a diabetes-reversal company" },
-    ],
+      "Every variable is labeled with how you'd actually measure it, and the engine runs in a Web Worker so the UI stays smooth.",
     links: [{ label: "Open the simulator", href: "https://metabolism-simulator.vercel.app" }],
     viz: "glucose",
     vizCaption: "Glucose (solid) and insulin across two meals",
@@ -128,11 +113,7 @@ export const projects: Project[] = [
     summary:
       "NOAA tide predictions and live wave-buoy readings on seamless land and seafloor elevation. Scrub through the next four days and see where the water is, where waves wash up, and which reefs and tidepools are exposed. Santa Cruz is the first region.",
     detail:
-      "Water spreads outward from the open sea cell by cell, so a pond behind a berm stays dry until it's overtopped. Wave runup uses the Stockdon (2006) formula from buoy height, period and beach slope. The renderer is hand-written WebGL2 with no libraries, and the hosted version is static files plus two Python functions.",
-    stats: [
-      { label: "Stack", value: "Python (numpy), WebGL2, Vercel functions" },
-      { label: "Data", value: "NOAA tides, NDBC buoys, NCEI elevation, USGS imagery" },
-    ],
+      "Water spreads in from the open sea cell by cell, wave runup comes from live buoys, and the renderer is hand-written WebGL2.",
     links: [{ label: "Open Tideline", href: "https://tideline-liard.vercel.app" }],
     viz: "glucose",
     vizCaption: "",
@@ -155,12 +136,7 @@ export const projects: Project[] = [
     summary:
       "A Spotify client I started in 2023 and rebuilt this year: browse your library, search music and podcasts, edit playlists, queue, song radio, a sleep timer, and playback right in the browser. It also ships as an iOS and Android app.",
     detail:
-      "The API client handles token refresh, rate-limit retries and fallbacks for Spotify's 2026 API changes. Playback state is polled and interpolated so the progress bar stays smooth with optimistic controls.",
-    stats: [
-      { label: "Commits", value: "91", big: true },
-      { label: "Stack", value: "Next.js 16, React 19, NextAuth, React Query, Capacitor" },
-      { label: "Platforms", value: "Web, iOS, Android" },
-    ],
+      "Token refresh, rate-limit retries and interpolated playback state keep it feeling instant.",
     links: [{ label: "Code on GitHub", href: "https://github.com/juliansunn/antefy" }],
     viz: "eq",
     vizCaption: "Music visualizer",
