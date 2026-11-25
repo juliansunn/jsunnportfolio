@@ -151,21 +151,6 @@ export const projects: Project[] = [
   },
 ];
 
-export const alsoBuilt = [
-  {
-    name: "Claude Usage",
-    what: "Local dashboard that turns Claude Code session transcripts into API-equivalent cost per session and per turn, cache tokens included.",
-    stack: "Next.js",
-    link: { label: "Code", href: "https://github.com/juliansunn/claude-usage" },
-  },
-  {
-    name: "God's Eye View",
-    what: "Contributed a Coastal Tides layer (NOAA predictions, animated sea surface) to an open-source 3D globe that hit #1 on GitHub Trending.",
-    stack: "JavaScript, WebGL",
-    link: { label: "Code", href: "https://github.com/juliansunn/gods-eye-view" },
-  },
-];
-
 export const experience = [
   {
     years: "2023–now",

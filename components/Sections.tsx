@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
-import { about, alsoBuilt, experience, profile, projects, skills, type Project } from "@/lib/content";
+import { about, experience, profile, projects, skills, type Project } from "@/lib/content";
 import { CareerTimeline } from "./CareerTimeline";
 import { CopyCommand } from "./CopyCommand";
 import { ProjectChart } from "./ProjectChart";
@@ -91,25 +91,6 @@ export function Work() {
       {projects.map((p) => (
         <FeaturedProject key={p.slug} p={p} />
       ))}
-      <h3 className="board-title">Also built</h3>
-      <table className="also">
-        <thead>
-          <tr><th scope="col">Project</th><th scope="col">What it does</th><th scope="col">Stack</th><th scope="col">Link</th></tr>
-        </thead>
-        <tbody>
-          {alsoBuilt.map((a) => (
-            <tr key={a.name}>
-              <td>{a.name}</td>
-              <td>{a.what}</td>
-              <td>{a.stack}</td>
-              <td className="st"><a href={a.link.href}>{a.link.label}</a></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <p className="muted" style={{ marginTop: 20 }}>
-        I also have private tools for market research and backtesting. Happy to demo them.
-      </p>
     </section>
   );
 }
