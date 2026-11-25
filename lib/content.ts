@@ -165,6 +165,13 @@ export const projects: Project[] = [
     viz: "eq",
     vizCaption: "Music visualizer",
     vizNote: "screenshot coming",
+    shot: {
+      src: "/shots/antefy-1.jpg",
+      alt: "Antefy home screen: library sidebar, playlist shortcuts and recently played albums over a northern-lights background",
+      caption: "Home, with the northern-lights background",
+      width: 1800,
+      height: 776,
+    },
   },
 ];
 
